@@ -6,15 +6,15 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Группы';
+$this->title = 'Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="groups-index">
+<div class="tasks-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Создать группу', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Tasks', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -25,10 +25,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'date_begin',
-            'date_end',
             'description:ntext',
+            'type_task_id',
+            'groups_id',
             //'projects_id',
+            //'data_begin',
+            //'data_end',
+            //'parent_id',
             //'created_at',
             //'created_by',
             //'updated_at',

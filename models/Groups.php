@@ -59,19 +59,19 @@ class Groups extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'date_begin' => 'Date Begin',
-            'date_end' => 'Date End',
-            'description' => 'Description',
-            'projects_id' => 'Projects ID',
-            'created_at' => 'Created At',
-            'created_by' => 'Created By',
-            'updated_at' => 'Updated At',
-            'updated_by' => 'Updated By',
-            'deleted_at' => 'Deleted At',
-            'deleted_by' => 'Deleted By',
-            'active' => 'Active',
-            'lock' => 'Lock',
+            'name' => 'Название',
+            'date_begin' => 'Дата начала',
+            'date_end' => 'Дата завершения',
+            'description' => 'Описание',
+            'projects_id' => 'Проект ID',
+            'created_at' => 'Дата создания',
+            'created_by' => 'Создал(а)',
+            'updated_at' => 'Дата изменения',
+            'updated_by' => 'Изменил(а)',
+            'deleted_at' => 'Дата удаления',
+            'deleted_by' => 'Удалил(а)',
+            'active' => 'Статус',
+            'lock' => 'Блокировка',
         ];
     }
 //sdasdadasa
@@ -104,4 +104,5 @@ class Groups extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Tasks::className(), ['groups_id' => 'id']);
     }
+
 }

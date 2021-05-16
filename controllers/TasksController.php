@@ -3,17 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Groups;
+use app\models\Tasks;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-
 /**
- * GroupsController implements the CRUD actions for Groups model.
+ * TasksController implements the CRUD actions for Tasks model.
  */
-class GroupsController extends Controller
+class TasksController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,13 +30,13 @@ class GroupsController extends Controller
     }
 
     /**
-     * Lists all Groups models.
+     * Lists all Tasks models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Groups::find(),
+            'query' => Tasks::find(),
         ]);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class GroupsController extends Controller
     }
 
     /**
-     * Displays a single Groups model.
+     * Displays a single Tasks model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,13 +58,13 @@ class GroupsController extends Controller
     }
 
     /**
-     * Creates a new Groups model.
+     * Creates a new Tasks model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Groups();
+        $model = new Tasks();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -77,7 +76,7 @@ class GroupsController extends Controller
     }
 
     /**
-     * Updates an existing Groups model.
+     * Updates an existing Tasks model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +96,7 @@ class GroupsController extends Controller
     }
 
     /**
-     * Deletes an existing Groups model.
+     * Deletes an existing Tasks model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,15 +110,15 @@ class GroupsController extends Controller
     }
 
     /**
-     * Finds the Groups model based on its primary key value.
+     * Finds the Tasks model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Groups the loaded model
+     * @return Tasks the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Groups::findOne($id)) !== null) {
+        if (($model = Tasks::findOne($id)) !== null) {
             return $model;
         }
 
